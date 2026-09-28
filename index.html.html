@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JuiceBliss | Fresh. Fruity. Fabulous.</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --green:#285943;
+    --light:#f7f3e9;
+    --cream:#fffaf0;
+    --orange:#f39b38;
+    --pink:#e97979;
+    --text:#24352b;
+    --muted:#6f786f;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.6;
+}
+
+#app{
+    background:var(--light);
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* HEADER */
+header{
+    background:var(--green);
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:20;
+    box-shadow:0 4px 16px #173d2a22;
+}
+
+.nav{
+    max-width:1120px;
+    margin:auto;
+    padding:17px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#f9c76b;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:24px;
+    font-size:14px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#f9c76b;
+}
+
+/* HERO */
+.hero{
+    max-width:1120px;
+    margin:auto;
+    padding:70px 24px 55px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:35px;
+}
+
+.badge{
+    display:inline-block;
+    background:#e6f0e8;
+    color:var(--green);
+    padding:7px 13px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:17px;
+}
+
+h1{
+    font-size:58px;
+    line-height:1.03;
+    margin-bottom:18px;
+}
+
+h1 span{
+    color:var(--orange);
+}
+
+.hero p{
+    max-width:570px;
+    color:var(--muted);
+    font-size:17px;
+    margin-bottom:26px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--green);
+    color:white;
+    padding:13px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    border:0;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    opacity:.92;
+}
+
+.btn.alt{
+    background:#fff;
+    color:var(--green);
+    border:1px solid #d7ddd5;
+    margin-left:8px;
+}
+
+/* HERO JUICE DESIGN */
+.hero-art{
+    min-height:400px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.circle{
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    background:#f8c76e;
+    box-shadow:0 25px 55px #d88d3838;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.glass{
+    width:150px;
+    height:205px;
+    border:8px solid white;
+    border-top:0;
+    border-radius:10px 10px 35px 35px;
+    background:linear-gradient(#f8a13e 0 100%);
+    transform:rotate(-5deg);
+    box-shadow:
+        inset 0 0 20px #a85e2040,
+        0 12px 25px #81501d35;
+    position:relative;
+}
+
+.glass:before{
+    content:'';
+    position:absolute;
+    width:80px;
+    height:14px;
+    background:white;
+    border-radius:50%;
+    left:27px;
+    top:-7px;
+}
+
+.straw{
+    position:absolute;
+    width:7px;
+    height:145px;
+    background:#285943;
+    transform:rotate(18deg);
+    left:105px;
+    top:-105px;
+    border-radius:5px;
+}
+
+.orange{
+    position:absolute;
+    width:76px;
+    height:76px;
+    border-radius:50%;
+    background:#f39b38;
+    border:5px solid #fff;
+    right:23px;
+    top:28px;
+}
+
+.orange:after{
+    content:'🍊';
+    font-size:47px;
+    position:absolute;
+    left:10px;
+    top:8px;
+}
+
+.leaf{
+    position:absolute;
+    font-size:50px;
+    left:18px;
+    bottom:45px;
+    transform:rotate(-25deg);
+}
+
+.hero-art:after{
+    content:'100% NATURAL';
+    position:absolute;
+    bottom:18px;
+    right:15px;
+    background:white;
+    color:var(--green);
+    font-weight:800;
+    font-size:11px;
+    padding:10px 13px;
+    border-radius:30px;
+    box-shadow:0 8px 20px #173d2a18;
+    transform:rotate(6deg);
+}
+
+/* GENERAL SECTIONS */
+section{
+    max-width:1120px;
+    margin:auto;
+    padding:70px 24px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:35px;
+}
+
+.section-title p{
+    color:var(--muted);
+    margin-top:6px;
+}
+
+.section-kicker{
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--orange);
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:var(--cream);
+    border:1px solid #e9e1d0;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 25px #3c5b4310;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px #3c5b4320;
+}
+
+.drink{
+    height:170px;
+    border-radius:16px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+}
+
+.mango{
+    background:#fff0cf;
+}
+
+.berry{
+    background:#f8dfe3;
+}
+
+.green{
+    background:#dfeee1;
+}
+
+.card h3{
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.price{
+    font-weight:800;
+    font-size:19px;
+    color:var(--green);
+    margin-bottom:15px;
+}
+
+/* ABOUT */
+.about{
+    background:#285943;
+    color:white;
+    max-width:none;
+}
+
+.about-inner{
+    max-width:1120px;
+    margin:auto;
+    padding:70px 24px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about h2{
+    font-size:36px;
+    margin-bottom:14px;
+}
+
+.about p{
+    color:#e5eee8;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.feature{
+    background:#ffffff12;
+    border:1px solid #ffffff20;
+    border-radius:13px;
+    padding:18px;
+}
+
+.feature strong{
+    display:block;
+    color:#f9c76b;
+    margin-bottom:5px;
+}
+
+/* CONTACT */
+.contact-strip{
+    max-width:1120px;
+    margin:0 auto 20px;
+    padding:0 24px;
+}
+
+.contact-box{
+    background:#f2ead8;
+    border-radius:20px;
+    padding:25px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    text-align:center;
+}
+
+.contact-box div{
+    padding:10px;
+}
+
+.contact-box strong{
+    display:block;
+    color:var(--green);
+    font-size:15px;
+    margin-bottom:3px;
+}
+
+.contact-box span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* ORDER FORM */
+.order{
+    background:#fffaf0;
+    border-radius:22px;
+    padding:35px;
+    max-width:760px;
+    margin:auto;
+    box-shadow:0 10px 35px #3c5b4312;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    font-weight:700;
+    font-size:14px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    padding:12px;
+    border:1px solid #d9ded6;
+    border-radius:9px;
+    background:white;
+    font:inherit;
+}
+
+.field textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.order .btn{
+    margin-top:18px;
+    width:100%;
+}
+
+#message{
+    text-align:center;
+    margin-top:15px;
+    color:var(--green);
+    font-weight:700;
+    min-height:25px;
+}
+
+/* FOOTER */
+footer{
+    background:#183d2a;
+    color:#dce8df;
+    text-align:center;
+    padding:30px;
+}
+
+.footer-links{
+    margin:12px 0;
+}
+
+.footer-links a{
+    color:#f9c76b;
+    text-decoration:none;
+    margin:0 8px;
+    font-size:13px;
+}
+
+.social{
+    margin-top:7px;
+    font-size:13px;
+    color:#abc2b2;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+
+    .hero,
+    .about-inner{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:45px;
+    }
+
+    h1{
+        font-size:43px;
+    }
+
+    .hero-art{
+        min-height:320px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .nav{
+        flex-direction:column;
+    }
+
+    .nav nav a{
+        margin:0 8px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- HEADER -->
+<header>
+    <div class="nav">
+
+        <div class="logo">
+            Juice<span>Bliss</span> 🍊
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#juices">Juices</a>
+            <a href="#about">About</a>
+            <a href="#order">Order</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- HOME SECTION -->
+<section class="hero" id="home">
+
+    <div>
+
+        <div class="badge">
+            100% Fresh • Made with Love
+        </div>
+
+        <h1>
+            Freshness in <span>Every Sip.</span>
+        </h1>
+
+        <p>
+            Discover delicious fruit juices made from fresh ingredients.
+            Bright flavors, simple goodness, and a refreshing taste for every mood.
+        </p>
+
+        <a class="btn" href="#juices">
+            Explore Juices
+        </a>
+
+        <a class="btn alt" href="#order">
+            Order Now
+        </a>
+
+    </div>
+
+
+    <div class="hero-art">
+
+        <div class="circle">
+
+            <div class="straw"></div>
+
+            <div class="glass"></div>
+
+            <div class="orange"></div>
+
+            <div class="leaf">
+                🌿
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JUICES SECTION -->
+<section id="juices">
+
+    <div class="section-title">
+
+        <div class="section-kicker">
+            Fresh Menu
+        </div>
+
+        <h2>
+            Our Fresh Favorites
+        </h2>
+
+        <p>
+            Choose your favorite flavor and enjoy the freshness.
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+        <div class="card">
+
+            <div class="drink mango">
+                🥭
+            </div>
+
+            <h3>
+                Mango Magic
+            </h3>
+
+            <p>
+                Sweet, creamy and full of tropical flavor.
+            </p>
+
+            <div class="price">
+                Rs. 250
+            </div>
+
+            <button
+                class="btn"
+                onclick="selectJuice('Mango Magic')">
+                Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+        <div class="card">
+
+            <div class="drink berry">
+                🍓
+            </div>
+
+            <h3>
+                Berry Blast
+            </h3>
+
+            <p>
+                A fruity mix with a fresh and slightly tangy taste.
+            </p>
+
+            <div class="price">
+                Rs. 280
+            </div>
+
+            <button
+                class="btn"
+                onclick="selectJuice('Berry Blast')">
+                Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+        <div class="card">
+
+            <div class="drink green">
+                🍏
+            </div>
+
+            <h3>
+                Green Fresh
+            </h3>
+
+            <p>
+                A light and refreshing apple-based fruit blend.
+            </p>
+
+            <div class="price">
+                Rs. 230
+            </div>
+
+            <button
+                class="btn"
+                onclick="selectJuice('Green Fresh')">
+                Add to Order
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+<div class="about" id="about">
+
+    <div class="about-inner">
+
+        <div>
+
+            <h2>
+                Why JuiceBliss?
+            </h2>
+
+            <p>
+                We believe a good juice should taste fresh, look beautiful
+                and make your day a little brighter. JuiceBliss brings simple
+                ingredients and exciting flavors together in every glass.
+            </p>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <strong>🍊 Fresh</strong>
+                Fresh fruit-inspired flavors.
+            </div>
+
+            <div class="feature">
+                <strong>✨ Quality</strong>
+                Carefully prepared drinks.
+            </div>
+
+            <div class="feature">
+                <strong>💚 Delicious</strong>
+                Made for every mood.
+            </div>
+
+            <div class="feature">
+                <strong>🚚 Easy Order</strong>
+                Quick and simple ordering.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CONTACT INFORMATION -->
+<div class="contact-strip">
+
+    <div class="contact-box">
+
+        <div>
+            <strong>📍 Islamabad</strong>
+            <span>
+                Freshness delivered locally
+            </span>
+        </div>
+
+        <div>
+            <strong>📞 0300-1234567</strong>
+            <span>
+                Mon–Sat • 10 AM–8 PM
+            </span>
+        </div>
+
+        <div>
+            <strong>✉️ hello@juicebliss.com</strong>
+            <span>
+                We'd love to hear from you
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ORDER SECTION -->
+<section id="order">
+
+    <div class="section-title">
+
+        <div class="section-kicker">
+            Contact Us
+        </div>
+
+        <h2>
+            Place Your Order
+        </h2>
+
+        <p>
+            Fill in the form and we'll receive your request.
+        </p>
+
+    </div>
+
+
+    <div class="order">
+
+        <div class="form-grid">
+
+            <div class="field">
+
+                <label>
+                    Your Name
+                </label>
+
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Enter your name">
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Juice
+                </label>
+
+                <select id="juice">
+
+                    <option>
+                        Mango Magic
+                    </option>
+
+                    <option>
+                        Berry Blast
+                    </option>
+
+                    <option>
+                        Green Fresh
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Quantity
+                </label>
+
+                <input
+                    id="quantity"
+                    type="number"
+                    min="1"
+                    value="1">
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Phone
+                </label>
+
+                <input
+                    id="phone"
+                    type="text"
+                    placeholder="03XX-XXXXXXX">
+
+            </div>
+
+
+            <div class="field full">
+
+                <label>
+                    Address
+                </label>
+
+                <textarea
+                    id="address"
+                    placeholder="Enter delivery address">
+                </textarea>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="placeOrder()">
+
+            Submit Order
+
+        </button>
+
+
+        <div id="message"></div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <strong>
+        JuiceBliss
+    </strong>
+
+    — Freshness in Every Sip.
+
+    <div class="footer-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        ·
+
+        <a href="#juices">
+            Menu
+        </a>
+
+        ·
+
+        <a href="#about">
+            About
+        </a>
+
+        ·
+
+        <a href="#order">
+            Contact
+        </a>
+
+    </div>
+
+    <div class="social">
+        Instagram • Facebook • Email |
+        © 2026 JuiceBliss
+    </div>
+
+</footer>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+function selectJuice(name){
+
+    document.getElementById("juice").value = name;
+
+    document.getElementById("order").scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+function placeOrder(){
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const juice =
+        document.getElementById("juice").value;
+
+    const qty =
+        document.getElementById("quantity").value;
+
+    const msg =
+        document.getElementById("message");
+
+
+    if(!name){
+
+        msg.textContent =
+            "Please enter your name.";
+
+        return;
+    }
+
+
+    msg.textContent =
+        "Thank you, " +
+        name +
+        "! Your order for " +
+        qty +
+        " × " +
+        juice +
+        " has been received.";
+
+}
+
+</script>
+
+</body>
+</html>
